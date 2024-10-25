@@ -1,0 +1,50 @@
+.affirmation-theme-container {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.affirmation-theme-card {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.affirmation-theme-image {
+    position: relative;
+}
+
+.affirmation-theme-image img {
+    width: 20rem;
+    height: auto;
+    border-radius: 10px;
+}
+
+.affirmation-theme-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 20rem;
+    text-align: center;
+}
+
+.affirmation-theme-content h1 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.affirmation-theme-content p {
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: justify;
+}

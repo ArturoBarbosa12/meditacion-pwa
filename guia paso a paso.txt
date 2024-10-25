@@ -1,0 +1,59 @@
+Ctrl + D = para modificar coincidencias
+Alt + clic izq = modificar varias lineas a la vez
+Alt + shift + hacia abajo = duplica una linea de codigo
+Ctrl + ñ = mostrar terminal/ocultar terminal
+Shift + tab = desplazar linea de codigo a la izquierda
+
+
+1. Crear el proyecto el laravel "laravel new nombreproyecto"
+tenemos la carpeta 
+2. creamos las terminales 1 para correr el servidor y dejarlo en segundo plano para esto usamos el comando "php artisan serve" y usamos la otra terminal para comandos que vayamos a usar
+3. usamos el comando "composer require laravel/ui" y luego 
+"php artisan ui bootstrap --auth" para crear de forma automatica lo que es la interfaz de registro y inicio de sesion
+4. ahora usaremos npm que es un package manager para javascript, para el frontend del proyecto usaremos html y un poco de javascript, vue
+ahora usaremos el comando "npm install" para que funcione el login y register
+5. nos vamos a .env y configuramos el puerto en este caso estaba en 3306 pero estoy usando 3307 en xamp asi que lo cambiamos a 3307, abrimos xamp y encendemos mysql y apache despues usamos el comando "npm run dev", tambien debemos colocar el nombre de la base de datos
+6. usamos el comando "php artisan migrate" 
+7. modificamos los archivos de:
+app.blade.php aca modificamos la barra de navegación y el estilo del background de nuestro proyecto y después usamos extends para traerlo al resto del proyecto
+welcome.blade.php aca modificamos la landing page
+register y login Blade también los modificamos
+8. Ahora nos vamos a resources>sass>app.scss
+Aquí agregamos los scss de cada parte de nuestro proyecto y luego lo importamos en app.scss 
+// Estilos de login
+@import "login";
+
+9. Ahora creamos los controladores para las pestañas de meditacion y afirmaciones que vienen en el home, para eso usamos 
+php artisan make:controller MeditationController
+php artisan make:controller MeditationThemeController
+php artisan make:controller AffirmationsController
+php artisan make:controller AffirmationsThemeController
+
+10. vamos a crear ahora un seeder para probar las funcionalidades
+php artisan make:seeder MeditationThemeSeeder
+php artisan make:seeder AffirmationSeeder
+
+luego de crear los seeders definimos los seeders de meditation y Affirmation
+
+luego ejecutamos los seeders con el comando:
+php artisan db:seed --class=MeditationThemeSeeder
+php artisan db:seed --class=AffirmationSeeder
+
+
+Crear el Usuario Administrador con Tinker
+php artisan tinker
+
+$user = new App\Models\User();
+$user->name = 'Admin';
+$user->email = 'admin@example.com';
+$user->password = Hash::make('12345678'); // Encripta la contraseña
+$user->is_admin = 1; // Definir que el usuario es administrador
+$user->save();
+
+Laravel guarda los archivos cargados en la carpeta storage/app/public, pero para 
+que esos archivos sean accesibles desde el navegador, necesitas crear un enlace simbólico
+ desde storage a public/storage. Puedes hacerlo con el siguiente comando en la terminal:
+ php artisan storage:link
+Esto creará un enlace simbólico en public/storage para que los archivos guardados en 
+storage/app/public sean accesibles en la web. Si ya has ejecutado este comando antes,
+ no necesitas hacerlo nuevamente.

@@ -1,0 +1,25 @@
+.panel {
+    background-color: #f7f7f742; /* Color de fondo de los paneles */
+    border: 1px solid #ccc; /* Borde del panel */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Relleno interno */
+    text-align: center; /* Centrar el texto */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    height: 200px; /* Altura del panel */
+    display: flex; /* Flex para centrar el contenido */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: center; /* Alinea horizontalmente */
+}
+
+.panel:hover {
+    background-color: #e1e1e126; /* Color de fondo al pasar el mouse */
+    transform: scale(
+        1.05
+    ); /* Aumenta el tamaño ligeramente al pasar el mouse */
+}
+
+.panel a {
+    text-decoration: none; /* Sin subrayado */
+    color: #e4e4e4; /* Color del texto */
+}
