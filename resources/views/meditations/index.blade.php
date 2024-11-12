@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="meditation-container">
-        <h1 class="mt-3" style="color: #333">Meditaciones Disponibles</h1>
+        <h1 class="mt-3">Meditaciones Disponibles</h1>
         <div class="meditation-card-container mb-5">
             @foreach ($themes as $theme)
                 <div class="meditation-card">
@@ -41,10 +41,10 @@
                         @endif
 
                         <!-- Hasta aqui va la logica de chequear las imagenes
-                                                            <img src="{{ asset('images/' . $theme->image) }}" alt="{{ $theme->name }}">
-                                                            <img src="{{ asset('storage/' . $theme->image) }}" alt="{{ $theme->name }}" class="card-img-top">
-                                                            antes funcionaba con una de las dos anteriores
-                                                        -->
+                                                                <img src="{{ asset('images/' . $theme->image) }}" alt="{{ $theme->name }}">
+                                                                <img src="{{ asset('storage/' . $theme->image) }}" alt="{{ $theme->name }}" class="card-img-top">
+                                                                antes funcionaba con una de las dos anteriores
+                                                            -->
 
 
                         <div class="meditation-card-content">

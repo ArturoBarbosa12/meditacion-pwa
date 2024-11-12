@@ -51,9 +51,12 @@
                         name="password_confirmation" required autocomplete="new-password">
                 </div>
 
-                <button type="submit" class="btn btn-primary" id="register-btn">
-                    {{ __('Registrarse') }}
-                </button>
+                <div>
+                    <button type="submit" class="register-button" id="register-btn">
+                        {{ __('Registrarse') }}
+                    </button>
+                </div>
+
 
                 <div class="register-link">
                     <p>

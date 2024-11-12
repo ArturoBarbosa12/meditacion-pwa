@@ -11,8 +11,9 @@
     }
 
     .nav-link {
-        color: white;
-        font-weight: 500;
+        color: #714c4c;
+
+        font-weight: 600;
 
         &:hover {
             color: #f1f1f1;
@@ -37,7 +38,16 @@
 }
 
 .nav-link-salir {
-    font-size: 1rem;
+    text-decoration: none;
+    color: #714c4c;
+}
+
+.nav-link-salir a {
+    color: #714c4c;
+    font-weight: 600;
+    &:hover {
+        color: #f1f1f1;
+    }
 }
 
 .bcolor {

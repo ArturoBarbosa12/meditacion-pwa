@@ -91,23 +91,30 @@
 
 @media (max-width: 767px) {
     .hero-header {
+        display: flex;
         flex-direction: column; /* El texto y la imagen estarán uno debajo del otro */
-        text-align: center; /* Centralizar todo el contenido */
-        height: 80vh; /* Ajustar la altura al contenido */
+        align-items: center; /* Centra el contenido horizontalmente */
+        justify-content: center; /* Centra el contenido verticalmente */
+        text-align: center;
+        height: 80vh;
     }
 
     .hero-content {
         max-width: 100%;
         padding: 0 1rem;
+        margin: auto; /* Centra el contenido */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido dentro de hero-content */
     }
 
     .hero-content h1 {
-        font-size: 1.5rem;
-        margin-top: 2rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
     }
 

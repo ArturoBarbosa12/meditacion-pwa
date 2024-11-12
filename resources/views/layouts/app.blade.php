@@ -19,39 +19,48 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss'])
 
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Mindfulness
-                    </a>
-                    @auth
-                        <a class="navbar-brand" href="{{ url('/home') }}">{{ __('Home') }}</a>
-                        <a class="navbar-brand" href="{{ url('/meditations') }}">{{ __('Meditacion') }}</a>
-                        <a class="navbar-brand" href="{{ url('/affirmations') }}">{{ __('Afirmaciones') }}</a>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Mindfulness
+                </a>
 
-                        <!-- Mostrar enlace de admin solo si el usuario es administrador -->
-                        @if (Auth::user()->is_admin)
-                            <a style="color: rgb(113, 76, 76)" class="navbar-brand"
-                                href="{{ url('/admin') }}">{{ __('Administrador') }}</a>
-                        @endif
-
-                    @endauth
-                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left side of the navbar -->
+                    <ul class="navbar-nav me-auto">
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/meditations') }}">{{ __('Meditacion') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/affirmations') }}">{{ __('Afirmaciones') }}</a>
+                            </li>
+                            <!-- Mostrar enlace de admin solo si el usuario es administrador -->
+                            @if (Auth::user()->is_admin)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/admin') }}">{{ __('Administrador') }}</a>
+                                </li>
+                            @endif
+                        @endauth
+                    </ul>
+
+                    <!-- Right side of the navbar -->
+                    <ul class="navbar-nav ms-auto">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -65,21 +74,13 @@
                                 </li>
                             @endif
                         @else
-                            <!-- Nombre de usuario
-                                                                                                    <li class="nav-item">
-                                                                                                            <span class="nav-link">{{ Auth::user()->name }}</span>
-                                                                                                        </li>
-                                                                                                    -->
-
                             <li class="nav-item">
-                                <button>
-                                    <a class="nav-link-salir" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
+                                <button class="btn btn-link nav-link-salir" style="padding: 0;">
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                 </button>
-
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
