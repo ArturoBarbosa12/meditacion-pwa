@@ -6,11 +6,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    @laravelPWA
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Mindfulness</title>
+    <title>Jhana</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('images/buda.png') }}" type="image/x-icon">
@@ -28,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Mindfulness
+                    Jhana
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,7 +43,7 @@
                     <ul class="navbar-nav me-auto">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
+                                <a class="nav-link" href="{{ url('/home') }}">{{ __('Inicio') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/meditations') }}">{{ __('Meditacion') }}</a>
@@ -64,7 +65,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Conectarse') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                                 </li>
                             @endif
 
@@ -78,7 +79,7 @@
                                 <button class="btn btn-link nav-link-salir" style="padding: 0;">
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Salir') }}
                                     </a>
                                 </button>
 
@@ -100,6 +101,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    
 </body>
 
 </html>
